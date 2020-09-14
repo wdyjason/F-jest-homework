@@ -1,4 +1,10 @@
-const verifyPassword = jest.fn().mockImplementation(() => true);
-const verifyUsername = jest.fn().mockImplementation(() => true);
+const verifyPassword = jest
+  .fn()
+  .mockReturnValueOnce(true)
+  .mockReturnValueOnce(false);
+const verifyUsername = jest
+  .fn()
+  .mockReturnValueOnce(true)
+  .mockReturnValueOnce(false);
 
 export { verifyPassword, verifyUsername };
