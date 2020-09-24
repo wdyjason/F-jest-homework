@@ -9,6 +9,7 @@ jest.mock("../recipient", () => {
   return jest.fn().mockImplementation(() => {
     return {
       acceptInjection: mockAcceptInjection,
+      // TODO feedback: 虽然这样实现测试也能过，但是还是推荐在具体的测试里面去mock getHasAntibodies()的返回值
       getHasAntibodies: () => {
         jest.fn().mockReturnValueOnce(true).mockReturnValueOnce(false);
       },
